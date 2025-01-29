@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced 3D float animation */
+@keyframes float-3d {
+  0% { transform: translateY(0px) translateZ(0) rotateX(0deg) rotateY(0deg); }
+  25% { transform: translateY(-15px) translateZ(20px) rotateX(5deg) rotateY(5deg); }
+  50% { transform: translateY(-25px) translateZ(40px) rotateX(10deg) rotateY(10deg); }
+  75% { transform: translateY(-15px) translateZ(20px) rotateX(5deg) rotateY(5deg); }
+  100% { transform: translateY(0px) translateZ(0) rotateX(0deg) rotateY(0deg); }
+}
+
+/* Enhanced reverse float animation */
+@keyframes float-3d-reverse {
+  0% { transform: translateY(0px) translateZ(0) rotateX(0deg) rotateY(0deg); }
+  25% { transform: translateY(-15px) translateZ(20px) rotateX(-5deg) rotateY(-5deg); }
+  50% { transform: translateY(-25px) translateZ(40px) rotateX(-10deg) rotateY(-10deg); }
+  75% { transform: translateY(-15px) translateZ(20px) rotateX(-5deg) rotateY(-5deg); }
+  100% { transform: translateY(0px) translateZ(0) rotateX(0deg) rotateY(0deg); }
+}
+
+/* Enhanced pulse animation with 3D depth */
+@keyframes pulse-3d {
+  0% { transform: translateZ(0) scale(1); opacity: 0.1; }
+  50% { transform: translateZ(30px) scale(1.1); opacity: 0.3; }
+  100% { transform: translateZ(0) scale(1); opacity: 0.1; }
+}
+
+/* Enhanced 3D rotation */
+@keyframes rotate-3d {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+/* Enhanced reverse 3D rotation */
+@keyframes rotate-3d-reverse {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(-360deg) rotateY(-360deg) rotateZ(-360deg); }
+}
+
+/* Enhanced 3D drift animation */
+@keyframes drift-3d {
+  0% { transform: translate3d(0, 0, 0) rotateX(0deg); }
+  25% { transform: translate3d(10px, 10px, 20px) rotateX(5deg); }
+  50% { transform: translate3d(0, 20px, 40px) rotateX(10deg); }
+  75% { transform: translate3d(-10px, 10px, 20px) rotateX(5deg); }
+  100% { transform: translate3d(0, 0, 0) rotateX(0deg); }
+}
+
+/* Enhanced 3D scale animation */
+@keyframes scale-3d {
+  0% { transform: scale3d(1, 1, 1) translateZ(0); }
+  50% { transform: scale3d(1.1, 1.1, 1.2) translateZ(30px); }
+  100% { transform: scale3d(1, 1, 1) translateZ(0); }
+}
+
+/* Apply perspective to container */
+.floating-shape {
+  animation: float-3d 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+
+.floating-shape-reverse {
+  animation: float-3d-reverse 7s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+
+.pulse-shape {
+  animation: pulse-3d 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+
+.rotating-shape {
+  animation: rotate-3d 20s linear infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+
+.rotating-shape-reverse {
+  animation: rotate-3d-reverse 25s linear infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+
+.drifting-shape {
+  animation: drift-3d 15s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+
+.scaling-shape {
+  animation: scale-3d 8s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
